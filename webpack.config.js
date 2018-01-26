@@ -10,7 +10,7 @@ const reImage = /\.(bmp|gif|jpe?g|png|svg)$/;
 const staticAssetName = isDebug
   ? '[path][name].[ext]?[hash:8]'
   : '[hash:8].[ext]';
-const build = path.resolve(__dirname, 'public');
+const build = path.resolve(__dirname, 'build');
 const cssModules = true;
 
 const config = {

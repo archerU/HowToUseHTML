@@ -1,10 +1,10 @@
 {
-    "name": "fenfaFront",
+    "name": "HowToUseHTML",
     "version": "1.0.0",
-    "description": "分发前端项目",
+    "description": "html知识大梳理",
     "main": "./src/index.js",
     "homepage": "",
-    "author": "ZhouHao",
+    "author": "雾小森",
     "license": "ISC",
     "scripts": {
         "build": "cross-env NODE_ENV=production webpack --progress --colors",
