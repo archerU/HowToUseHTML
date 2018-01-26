@@ -1,17 +1,22 @@
-import dva from 'dva';
-import './index.css';
+import React from 'react'
+import {render} from 'react-dom';
+import routes from './routes';
+import Root from './Root';
+import './styles/app.scss';
+import {AppContainer} from 'react-hot-loader';
+import 'babel-polyfill';
 
-// 1. Initialize
-const app = dva();
+const renderApp = appRoutes => {
+  render(<AppContainer>
+    <Root routes={appRoutes}/>
+  </AppContainer>, document.getElementById('react'));
+};
 
-// 2. Plugins
-// app.use({});
+renderApp(routes);
 
-// 3. Model
-// app.model(require('./models/example'));
-
-// 4. Router
-app.router(require('./router'));
-
-// 5. Start
-app.start('#root');
+if (module.hot) {
+  module.hot.accept('./routes', () => {
+    const newRoutes = require('./routes').default;
+    renderApp(newRoutes);
+  });
+}
