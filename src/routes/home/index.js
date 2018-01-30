@@ -64,7 +64,7 @@ class Home extends Component {
             </dl>
             <hr/>
             <h3>表格 10个标签</h3>
-            <ul className={s.linestyle}>
+            <ul className={s.outstyle}>
               <li>caption,col,colgroup</li>
               <li>table,thead,tr,th,tbody,td,tfoot</li>
             </ul>
