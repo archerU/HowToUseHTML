@@ -1,25 +1,30 @@
 :global {
-  // 块级元素 - 内容分区
-  header,footer,article {
-    background-color: #FA98B0;
+  // body
+  body {
+    padding: 10px;
+    margin: 0;
   }
-  h1,h2,h3,h4,h5,h6 {
+  // 块级元素 - 内容分区
+  article,
+  footer,
+  header {}
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     background-color: #FA98B0;
   }
 
-  ul,ol,dl {
-    background-color: #FA98B0;
-  }
+  dl,
+  dl dt,
+  dl dt dd,
+  ol,
+  ol li,
+  ul,
   ul li {
-    background-color: #FA98B0;
-  }
-  ol li {
-    background-color: #FA98B0;
-  }
-  dl dt {
-    background-color: #FA98B0;
-  }
-  dl dt dd {
     background-color: #FA98B0;
   }
 
@@ -27,21 +32,35 @@
     background-color: #FA98B0;
   }
   // 块级元素 - 文本内容
-  dir,pre,p,hr,blockquote,figure,figcaption {
+  blockquote,
+  dir,
+  figcaption,
+  figure,
+  hr,
+  p,
+  pre {
     background-color: #8BF6D0;
   }
   // 图片与多媒体
-  audio,video {
+  audio,
+  video {
     background-color: #F7F399;
   }
   // 表格
-  table,thead,tbody,tfoot,tr,th,td {
+  table,
+  tbody,
+  td,
+  tfoot,
+  th,
+  thead,
+  tr {
     background-color: #75CDFD;
   }
   // 表单
   form {
     background-color: #D3A6E9;
   }
+
   datalist {
     display: block;
   }
@@ -50,9 +69,75 @@
     display: block;
   }
 }
+
+:global(header) {
+  position: relative;
+  border: 2px solid #FA98B0;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: 'header';
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: -18px;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  :global(nav) {
+    position: relative;
+    flex: 1;
+    border: 2px solid #FA98B0;
+    padding: 15px;
+
+    &::before {
+      content: 'nav';
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin-top: -18px;
+    }
+  }
+}
+
+:global(aside) {
+  position: relative;
+  border: 2px solid #FA98B0;
+  padding: 15px;
+  margin: 15px 15px 0 0;
+}
+
+:global(main) {
+  position: relative;
+  border: 2px solid #FA98B0;
+  padding: 15px;
+  margin-top: 15px;
+  flex: 1;
+}
+
+:global(footer) {
+  margin-top: 15px;
+}
+
 .p {
   background-color: #fff;
 }
+
 .div {
   background-color: #8BF6D0;
+}
+.content {
+  display: flex;
+}
+.linestyle {
+  background-color:#F7F399;
+
+  :global(li) {
+    background-color:#F7F399;
+  }
 }
